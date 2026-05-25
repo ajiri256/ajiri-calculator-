@@ -1,0 +1,621 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,#ffb6d9,#f4a8ff);
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* =========================
+   APP CONTAINER
+========================= */
+
+.app-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   PHONE
+========================= */
+
+.calculator-phone{
+    width: 100%;
+    max-width: 390px;
+    min-height: 950px;
+    background: linear-gradient(
+        180deg,
+        #241132 0%,
+        #130b1d 100%
+    );
+    border-radius: 40px;
+    padding: 24px 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.45),
+    0 0 25px rgba(255,105,180,0.25);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.top-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.menu-icon,
+.theme-toggle{
+    width: 45px;
+    height: 45px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+.app-title{
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.app-title span{
+    color: #ff67b3;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+    width: 100%;
+    padding-bottom: 140px;
+}
+
+/* =========================
+   DISPLAY
+========================= */
+
+.display-container{
+    width: 100%;
+    min-height: 180px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 28px;
+    padding: 25px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.05),
+    0 0 30px rgba(255,105,180,0.12);
+}
+
+.calculation-preview{
+    color: rgba(255,255,255,0.65);
+    font-size: 22px;
+    margin-bottom: 12px;
+    word-break: break-all;
+}
+
+.result-screen{
+    color: #ffffff;
+    font-size: 64px;
+    font-weight: 600;
+    word-break: break-all;
+}
+
+/* =========================
+   TOOL BUTTONS
+========================= */
+
+.tool-buttons{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.tool-btn{
+    background: rgba(255,255,255,0.05);
+    border: none;
+    border-radius: 22px;
+    padding: 18px 10px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.tool-btn i{
+    font-size: 20px;
+    color: #ff6eb7;
+}
+
+.tool-btn:hover{
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   CALCULATOR GRID
+========================= */
+
+.calculator-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.calc-btn{
+    height: 78px;
+    border: none;
+    border-radius: 24px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    transition: 0.25s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow:
+    0 4px 15px rgba(0,0,0,0.18);
+}
+
+.calc-btn:hover{
+    transform: scale(1.05);
+}
+
+.number-btn{
+    background: rgba(255,255,255,0.06);
+}
+
+.operator-btn,
+.delete-btn{
+    background: linear-gradient(
+        180deg,
+        #ff75bc,
+        #ff4fa2
+    );
+    box-shadow:
+    0 0 18px rgba(255,105,180,0.45);
+}
+
+.clear-btn,
+.bracket-btn,
+.plus-minus-btn,
+.decimal-btn{
+    background: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   EQUAL BUTTON
+========================= */
+
+.equal-btn{
+    width: 100%;
+    height: 82px;
+    border: none;
+    border-radius: 28px;
+    background: linear-gradient(
+        90deg,
+        #ff7fc7,
+        #ff4fa2
+    );
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow:
+    0 0 25px rgba(255,105,180,0.45);
+}
+
+.equal-btn:hover{
+    transform: scale(1.02);
+}
+
+/* =========================
+   CONVERTER SECTION
+========================= */
+
+.converter-section{
+    display: none;
+}
+
+.active-section{
+    display: block;
+}
+
+/* =========================
+   TABS
+========================= */
+
+.converter-tabs{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.tab-btn{
+    flex: 1;
+    border: none;
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.06);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.converter-active{
+    background: linear-gradient(
+        90deg,
+        #ff82c8,
+        #ff4ea0
+    );
+}
+
+/* =========================
+   CONVERTER CARD
+========================= */
+
+.converter-card{
+    background: linear-gradient(
+        180deg,
+        rgba(255,123,191,0.85),
+        rgba(255,89,167,0.65)
+    );
+    border-radius: 30px;
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow:
+    0 0 30px rgba(255,105,180,0.28);
+}
+
+.currency-box{
+    margin-bottom: 18px;
+}
+
+.currency-label{
+    color: #ffffff;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.currency-input{
+    background: rgba(19,11,29,0.88);
+    border-radius: 22px;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.currency-info{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.flag-circle{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    background: rgba(255,255,255,0.08);
+}
+
+.currency-text h3{
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.currency-text p{
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+}
+
+.currency-number{
+    width: 110px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    text-align: right;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* =========================
+   SWAP
+========================= */
+
+.swap-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.swap-btn{
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(
+        180deg,
+        #ff8ccd,
+        #ff4ea0
+    );
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow:
+    0 0 20px rgba(255,105,180,0.4);
+}
+
+/* =========================
+   RATE
+========================= */
+
+.exchange-rate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.exchange-rate p{
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.rate-status{
+    color: #4dff9d;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* =========================
+   QUICK CURRENCIES
+========================= */
+
+.quick-currency-card,
+.recent-card,
+.history-section{
+    background: rgba(255,255,255,0.05);
+    border-radius: 28px;
+    padding: 22px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.06);
+    backdrop-filter: blur(14px);
+}
+
+.card-title{
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.quick-currency-grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 12px;
+}
+
+.quick-currency-btn{
+    border: none;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.06);
+    padding: 14px 8px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.quick-currency-btn span{
+    font-size: 12px;
+}
+
+/* =========================
+   RECENT
+========================= */
+
+.recent-list{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.recent-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recent-left p{
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.recent-left span{
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+}
+
+.recent-right{
+    color: #ff7dc2;
+    font-weight: 600;
+}
+
+/* =========================
+   HISTORY
+========================= */
+
+.history-section{
+    display: none;
+}
+
+.history-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.history-header h2{
+    color: #ffffff;
+}
+
+.clear-history-btn{
+    border: none;
+    background: linear-gradient(
+        90deg,
+        #ff7fc7,
+        #ff4fa2
+    );
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.history-list{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-navigation{
+    width: calc(100% - 40px);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 24px;
+    padding: 14px 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-btn{
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-btn i{
+    font-size: 18px;
+}
+
+.active-nav{
+    color: #ff6eb7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:480px){
+
+    body{
+        padding: 0;
+    }
+
+    .calculator-phone{
+        max-width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+
+    .result-screen{
+        font-size: 52px;
+    }
+
+    .calc-btn{
+        height: 72px;
+        font-size: 26px;
+    }
+
+    .equal-btn{
+        height: 74px;
+        font-size: 36px;
+    }
+
+    .currency-number{
+        font-size: 24px;
+        width: 90px;
+    }
+
+    .quick-currency-grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+}

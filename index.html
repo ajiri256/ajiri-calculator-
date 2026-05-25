@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- BASIC -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TITLE -->
+    <title>Ajiri Calculator</title>
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#ff4fa2">
+</head>
+
+<body>
+
+    <!-- MAIN APP -->
+    <div class="app-container">
+
+        <!-- PHONE FRAME -->
+        <div class="calculator-phone">
+
+            <!-- TOP HEADER -->
+            <header class="top-header">
+
+                <div class="menu-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <h1 class="app-title">
+                    Ajiri <span>Calculator</span>
+                </h1>
+
+                <div class="theme-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+
+            </header>
+
+            <!-- MAIN CONTENT -->
+            <main class="main-content">
+
+                <!-- CALCULATOR SECTION -->
+                <section class="calculator-section active-section" id="calculatorSection">
+
+                    <!-- DISPLAY -->
+                    <div class="display-container">
+
+                        <div class="calculation-preview" id="calculationPreview">
+                            0
+                        </div>
+
+                        <div class="result-screen" id="resultScreen">
+                            0
+                        </div>
+
+                    </div>
+
+                    <!-- TOOL BUTTONS -->
+                    <div class="tool-buttons">
+
+                        <button class="tool-btn history-btn" id="historyBtn">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <span>History</span>
+                        </button>
+
+                        <button class="tool-btn converter-btn" id="converterBtn">
+                            <i class="fa-solid fa-right-left"></i>
+                            <span>Converter</span>
+                        </button>
+
+                        <button class="tool-btn scientific-btn" id="scientificBtn">
+                            <i class="fa-solid fa-square-root-variable"></i>
+                            <span>Scientific</span>
+                        </button>
+
+                    </div>
+
+                    <!-- CALCULATOR KEYS -->
+                    <div class="calculator-grid">
+
+                        <!-- ROW 1 -->
+                        <button class="calc-btn clear-btn" data-value="C">
+                            C
+                        </button>
+
+                        <button class="calc-btn bracket-btn" data-value="(">
+                            (
+                        </button>
+
+                        <button class="calc-btn bracket-btn" data-value=")">
+                            )
+                        </button>
+
+                        <button class="calc-btn delete-btn" data-value="DEL">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </button>
+
+                        <!-- ROW 2 -->
+                        <button class="calc-btn number-btn" data-value="7">
+                            7
+                        </button>
+
+                        <button class="calc-btn number-btn" data-value="8">
+                            8
+                        </button>
+
+                        <button class="calc-btn number-btn" data-value="9">
+                            9
+                        </button>
+
+                        <button class="calc-btn operator-btn" data-value="/">
+                            ÷
+                        </button>
+
+                        <!-- ROW 3 -->
+                        <button class="calc-btn number-btn" data-value="4">
+                            4
+                        </button>
+
+                        <button class="calc-btn number-btn" data-value="5">
+                            5
+                        </button>
+
+                        <button class="calc-btn number-btn" data-value="6">
+                            6
+                        </button>
+
+                        <button class="calc-btn operator-btn" data-value="*">
+                            ×
+                        </button>
+
+                        <!-- ROW 4 -->
+                        <button class="calc-btn number-btn" data-value="1">
+                            1
+                        </button>
+
+                        <button class="calc-btn number-btn" data-value="2">
+                            2
+                        </button>
+
+                        <button class="calc-btn number-btn" data-value="3">
+                            3
+                        </button>
+
+                        <button class="calc-btn operator-btn" data-value="-">
+                            −
+                        </button>
+
+                        <!-- ROW 5 -->
+                        <button class="calc-btn plus-minus-btn" data-value="+/-">
+                            +/−
+                        </button>
+
+                        <button class="calc-btn number-btn" data-value="0">
+                            0
+                        </button>
+
+                        <button class="calc-btn decimal-btn" data-value=".">
+                            .
+                        </button>
+
+                        <button class="calc-btn operator-btn" data-value="+">
+                            +
+                        </button>
+
+                    </div>
+
+                    <!-- EQUAL BUTTON -->
+                    <button class="equal-btn" id="equalBtn">
+                        =
+                    </button>
+
+                </section>
+
+                <!-- CONVERTER SECTION -->
+                <section class="converter-section" id="converterSection">
+
+                    <!-- TABS -->
+                    <div class="converter-tabs">
+
+                        <button class="tab-btn active-tab">
+                            Calculator
+                        </button>
+
+                        <button class="tab-btn converter-active">
+                            Converter
+                        </button>
+
+                        <button class="tab-btn">
+                            History
+                        </button>
+
+                    </div>
+
+                    <!-- CONVERTER CARD -->
+                    <div class="converter-card">
+
+                        <!-- FROM -->
+                        <div class="currency-box">
+
+                            <label class="currency-label">
+                                From
+                            </label>
+
+                            <div class="currency-input">
+
+                                <div class="currency-info">
+
+                                    <div class="flag-circle usd-flag">
+                                        🇺🇸
+                                    </div>
+
+                                    <div class="currency-text">
+                                        <h3>USD</h3>
+                                        <p>US Dollar</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="currency-amount">
+
+                                    <input
+                                    type="number"
+                                    id="fromAmount"
+                                    class="currency-number"
+                                    value="100">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- SWAP -->
+                        <div class="swap-container">
+
+                            <button class="swap-btn" id="swapBtn">
+                                <i class="fa-solid fa-arrow-up-arrow-down"></i>
+                            </button>
+
+                        </div>
+
+                        <!-- TO -->
+                        <div class="currency-box">
+
+                            <label class="currency-label">
+                                To
+                            </label>
+
+                            <div class="currency-input">
+
+                                <div class="currency-info">
+
+                                    <div class="flag-circle eur-flag">
+                                        🇪🇺
+                                    </div>
+
+                                    <div class="currency-text">
+                                        <h3>EUR</h3>
+                                        <p>Euro</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="currency-amount">
+
+                                    <input
+                                    type="text"
+                                    id="toAmount"
+                                    class="currency-number"
+                                    value="92.35"
+                                    readonly>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- RATE -->
+                        <div class="exchange-rate">
+
+                            <p id="exchangeRateText">
+                                1 USD = 0.9235 EUR
+                            </p>
+
+                            <span class="rate-status">
+                                +0.12%
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- QUICK CURRENCIES -->
+                    <div class="quick-currency-card">
+
+                        <h3 class="card-title">
+                            Quick Currencies
+                        </h3>
+
+                        <div class="quick-currency-grid">
+
+                            <button class="quick-currency-btn">
+                                🇺🇸
+                                <span>USD</span>
+                            </button>
+
+                            <button class="quick-currency-btn">
+                                🇪🇺
+                                <span>EUR</span>
+                            </button>
+
+                            <button class="quick-currency-btn">
+                                🇬🇧
+                                <span>GBP</span>
+                            </button>
+
+                            <button class="quick-currency-btn">
+                                🇯🇵
+                                <span>JPY</span>
+                            </button>
+
+                            <button class="quick-currency-btn">
+                                +
+                                <span>More</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RECENT CONVERSIONS -->
+                    <div class="recent-card">
+
+                        <h3 class="card-title">
+                            Recent Conversions
+                        </h3>
+
+                        <div class="recent-list" id="recentList">
+
+                            <div class="recent-item">
+
+                                <div class="recent-left">
+                                    <p>100 USD → EUR</p>
+                                    <span>Today, 9:41 AM</span>
+                                </div>
+
+                                <div class="recent-right">
+                                    92.35 EUR
+                                </div>
+
+                            </div>
+
+                            <div class="recent-item">
+
+                                <div class="recent-left">
+                                    <p>50 GBP → USD</p>
+                                    <span>Today, 8:15 AM</span>
+                                </div>
+
+                                <div class="recent-right">
+                                    63.21 USD
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- HISTORY SECTION -->
+                <section class="history-section" id="historySection">
+
+                    <div class="history-header">
+
+                        <h2>
+                            Calculation History
+                        </h2>
+
+                        <button class="clear-history-btn" id="clearHistoryBtn">
+                            Clear
+                        </button>
+
+                    </div>
+
+                    <div class="history-list" id="historyList">
+
+                        <!-- JAVASCRIPT WILL ADD HISTORY -->
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <!-- BOTTOM NAVIGATION -->
+            <nav class="bottom-navigation">
+
+                <button class="nav-btn active-nav" id="homeNav">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Home</span>
+
+                </button>
+
+                <button class="nav-btn" id="calculatorNav">
+
+                    <i class="fa-solid fa-calculator"></i>
+
+                    <span>Calculator</span>
+
+                </button>
+
+                <button class="nav-btn" id="converterNav">
+
+                    <i class="fa-solid fa-right-left"></i>
+
+                    <span>Converter</span>
+
+                </button>
+
+                <button class="nav-btn" id="historyNav">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    <span>History</span>
+
+                </button>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
